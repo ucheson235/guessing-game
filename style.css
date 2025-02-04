@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #000;
+    background-image: radial-gradient(#ffffff33 1px, #00091d 1px);
+    background-size: 20px 20px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 80%;
+    max-width: 900px;
+    height: 80vh;
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    opacity: 0.95;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+}
+
+#colorBox {
+    width: 300px;
+    height: 250px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #000;
+    background-color: #000;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#colorBox i {
+    font-size: 100px;
+    color: red;
+}
+
+#newGameButton {
+    background-color: white;
+    border: 2px solid #000;
+    margin-top: 30px;
+    padding: 10px 20px;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#newGameButton:hover {
+    background-color: aqua;
+}
+
+#gameStatus{
+    color: tomato;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.option {
+    padding: 10px;
+    border: 1px solid #000;
+    cursor: pointer;
+    background-color: #fff;
+    transition: transform 0.2s;
+}
+
+.option:hover {
+    transform: scale(1.1);
+    background-color: lightblue;
+}
+
+.score {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+}
+
+#resetButton{
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 5%;
+    right: 40%;
+    background-color: transparent;
+    color: white;
+    border: none;
+    
+
+}
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        height: 85vh;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    #colorBox {
+        width: 80%;
+        height: 200px;
+    }
+
+    #colorBox i {
+        font-size: 80px;
+    }
+
+    .options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .option {
+        padding: 8px;
+    }
+
+    .score {
+        font-size: 16px;
+    }
+
+    #resetButton {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 95%;
+        height: 90vh;
+    }
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    #colorBox {
+        width: 100%;
+        height: 180px;
+    }
+
+    #colorBox i {
+        font-size: 60px;
+    }
+
+    .options {
+        grid-template-columns: 1fr;
+    }
+
+    .option {
+        padding: 6px;
+    }
+
+    .score {
+        font-size: 14px;
+    }
+
+    #resetButton {
+        font-size: 14px;
+    }
+}
