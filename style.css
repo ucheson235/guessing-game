@@ -102,21 +102,20 @@ body {
     margin-bottom: 50px;
     position: absolute;
     bottom: 3%;
-    width: 100%;
+    left: 40%;
+    width: auto;
 }
 
-#resetButton{
+#resetButton {
     font-size: 18px;
     font-weight: bold;
     margin-top: 50px;
     position: absolute;
-    bottom: 0%;
-    right: 40%;
+    bottom: 3%;
+    right: 30%;
     background-color: transparent;
     color: white;
     border: none;
-    
-
 }
 /* Media Queries for Responsiveness */
 @media screen and (max-width: 768px) {
