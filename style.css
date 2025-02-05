@@ -138,7 +138,9 @@ body {
 
     .options {
         grid-template-columns: repeat(2, 1fr);
-        margin-bottom: 20px;
+        margin-bottom: 30px;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
 
     .option {
