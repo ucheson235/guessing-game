@@ -147,11 +147,11 @@ body {
     }
 
     .score {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     #resetButton {
-        font-size: 20px;
+        font-size: 16px;
     }
 }
 
@@ -176,17 +176,18 @@ body {
 
     .options {
         grid-template-columns: 1fr;
+        gap: 10px;
     }
 
     .option {
-        padding: 6px;
+        padding: 20px;
     }
 
     .score {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     #resetButton {
-        font-size: 14px;
+        font-size: 16px;
     }
 }
