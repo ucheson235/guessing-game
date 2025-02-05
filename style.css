@@ -10,7 +10,7 @@ body {
     background-color: #000;
     background-image: radial-gradient(#ffffff33 1px, #00091d 1px);
     background-size: 20px 20px;
-    height: 150vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,7 +19,7 @@ body {
 .container {
     width: 80%;
     max-width: 900px;
-    height: 100vh;
+    height: 80vh;
     padding: 20px;
     background-color: transparent;
     border-radius: 8px;
@@ -176,11 +176,11 @@ body {
 
     .options {
         grid-template-columns: 1fr;
-        gap: 10px;
+        gap: 5px;
     }
 
     .option {
-        padding: 20px;
+        padding: 5px;
     }
 
     .score {
