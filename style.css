@@ -176,11 +176,11 @@ body {
 
     .options {
         grid-template-columns: 1fr;
-        gap: 5px;
+        gap: 10px;
     }
 
     .option {
-        padding: 5px;
+        padding: 10px;
     }
 
     .score {
