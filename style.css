@@ -99,8 +99,9 @@ body {
     font-weight: bold;
     color: white;
     margin-top: 50px;
+    margin-bottom: 50px;
     position: absolute;
-    bottom: 2%;
+    bottom: 3%;
     width: 100%;
 }
 
