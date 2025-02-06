@@ -1,7 +1,7 @@
 // Get DOM elements
 const colorBox = document.getElementById('colorBox');
 const newGameButton = document.getElementById('newGameButton');
-const resetButton = document.getElementById('resetButton');  // New reset button
+const resetButton = document.getElementById('resetButton'); // Reset button
 const gameStatus = document.getElementById('gameStatus');
 const scoreDisplay = document.getElementById('score');
 const optionsContainer = document.getElementById('options');
@@ -10,7 +10,7 @@ const optionsContainer = document.getElementById('options');
 let targetColor;
 let score = 0;
 
-// Function to generate random color in RGB format
+// Function to generate a random RGB color
 function generateRandomColor() {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
@@ -18,32 +18,32 @@ function generateRandomColor() {
     return `rgb(${r}, ${g}, ${b})`;
 }
 
-// Function to start a new game
+// Function to start a new round of the game
 function startGame() {
-    // Generate target color
+    // Generate a new target color
     targetColor = generateRandomColor();
-    
-    // Reset the colorBox to have a black background and be empty
-    colorBox.style.backgroundColor = 'black'; // Initially black
-    colorBox.innerHTML = '<i class="fas fa-question"></i>'; // Display the question mark icon
-    
+
+    // Reset the colorBox to black and empty at the beginning of the round
+    colorBox.style.backgroundColor = 'black';
+    colorBox.innerHTML = '<i class="fas fa-question"></i>'; // Display question mark
+
     // Update game status
     gameStatus.textContent = 'Guess the color!';
-    
-    // Generate options for color guessing
+
+    // Generate multiple color options
     const options = [];
     for (let i = 0; i < 6; i++) {
         options.push(generateRandomColor());
     }
-    
-    // Randomly set one of the options to the target color
+
+    // Replace a random option with the correct color
     const randomIndex = Math.floor(Math.random() * 6);
     options[randomIndex] = targetColor;
-    
+
     // Clear previous options
     optionsContainer.innerHTML = '';
-    
-    // Create buttons for each option
+
+    // Create buttons for each color option
     options.forEach(color => {
         const optionButton = document.createElement('button');
         optionButton.classList.add('option');
@@ -51,36 +51,41 @@ function startGame() {
         optionButton.addEventListener('click', () => handleGuess(color));
         optionsContainer.appendChild(optionButton);
     });
-    
-    // Reset score display
+
+    // Update score display
     scoreDisplay.textContent = score;
 }
 
-// Function to handle a user's guess
+// Function to handle user's guess
 function handleGuess(guessColor) {
     if (guessColor === targetColor) {
-        gameStatus.textContent = 'Correct! Well done.';
+        // Player guessed correctly
+        gameStatus.textContent = 'Correct! Keep going!';
         score++;
-        colorBox.style.backgroundColor = targetColor; // Show the color when correct guess
+        colorBox.style.backgroundColor = targetColor; // Show correct color in colorBox
+        
+        // Delay and start a new round automatically
+        setTimeout(startGame, 1000);
     } else {
+        // Player guessed wrong
         gameStatus.textContent = 'Wrong! Try again.';
     }
-    
-    // Update score
+
+    // Update score display
     scoreDisplay.textContent = score;
 }
 
-// Event listener for the "Play Again" button
+// Event listener for "Play Again" button
 newGameButton.addEventListener('click', () => {
     startGame();
 });
 
-// Event listener for the "Reset" button (to reset the game completely)
+// Event listener for "Reset Game" button
 resetButton.addEventListener('click', () => {
-    score = 0;  // Reset the score
-    scoreDisplay.textContent = score;  // Update the score display
-    startGame();  // Start a new game
+    score = 0;  // Reset score to 0
+    scoreDisplay.textContent = score;
+    startGame();
 });
 
-// Start the first game
+// Start the first game when the page loads
 startGame();
